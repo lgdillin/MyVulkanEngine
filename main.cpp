@@ -16,6 +16,17 @@ public:
 	}
 	
 private:
+	GLFWwindow *m_window;
+
+	void initWindow() {
+		// tell glfw to not create an opengl context (use vulkan instead)
+		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+		glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
+		// option 4 is a specific monitor to open the window on
+		// option 5 is opengl-only option (not relevant here)
+		window = glfwCreateWindow(800, 600, "Vulkan", nullptr, nullptr);
+
 	void initVulkan() {
 		
 	}
