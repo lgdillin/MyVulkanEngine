@@ -1,4 +1,6 @@
-#include <vulkan/vulkan.h>
+//#include <vulkan/vulkan.h>
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
 
 #include <iostream>
 #include <stdexcept>
@@ -7,6 +9,7 @@
 class HelloTriangleApplication {
 public:
 	void run() {
+		initWindow();
 		initVulkan();
 		mainLoop();
 		cleanUp();
